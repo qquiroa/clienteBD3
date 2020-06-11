@@ -13,6 +13,9 @@
   "dependencies": {
     "@quasar/extras": "^1.0.0",
     "axios": "^0.18.1",
+    "jspdf": "^1.5.3",
+    "jspdf-autotable": "^3.5.3",
+    "pdfjs": "^2.3.9",
     "quasar": "^1.0.0"
   },
   "devDependencies": {

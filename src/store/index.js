@@ -19,6 +19,23 @@ export default function (/* { ssrContext } */) {
     modules: {
       // example
     },
+    state: {
+      policiaURI : 'http://localhost:5000/delicuente/antecedentes/',
+      antecedentes: {},
+    },
+    mutations: {
+      SetAntecedentes(state, payload){
+        state.antecedentes = payload.antecedentes
+      }
+    },
+    getters: {
+      policiaURI: (state) => {
+        return state.policiaURI
+      },
+      antecedentes: (state) => {
+        return state.antecedentes
+      }
+    },
 
     // enable strict mode (adds overhead!)
     // for dev mode only
