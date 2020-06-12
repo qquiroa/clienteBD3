@@ -19,7 +19,7 @@
             <q-separator />
             <br />
             <center>
-              <q-btn type="submit" color="primary">Verificar</q-btn>
+              <q-btn type="submit" :loading="loading" color="primary">Verificar</q-btn>
             </center>
           </q-form>
         </q-card-section>
@@ -34,11 +34,13 @@ import autoTable from "jspdf-autotable";
 export default {
   data() {
     return {
-      cui: ""
+      cui: "",
+      loading: false
     };
   },
   methods: {
     SendData() {
+      this.loading = true;
       this.$axios
         .get(this.policiaURI + "/" + this.cui)
         .then(response => {
@@ -67,10 +69,11 @@ export default {
               body: ants
             });
           }
-
+          this.loading = false;
           window.open(doc.output("bloburl"), "_blank");
         })
         .catch(e => {
+          this.loading = false;
           console.log(e);
         });
     }
