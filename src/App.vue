@@ -6,6 +6,14 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  beforeCreate(){
+    if(sessionStorage.tokenPolicia){
+      this.$router.push("/")
+    }
+    else{
+      this.$router.push("/Login")
+    }
+  }
 }
 </script>

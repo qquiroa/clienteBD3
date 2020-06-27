@@ -20,21 +20,29 @@ export default function (/* { ssrContext } */) {
       // example
     },
     state: {
-      policiaURI : 'http://localhost:5000/delicuente/antecedentes/',
+      policiaURL : 'http://34.69.177.195:5000',
+      bancoURL: 'http://34.72.22.112:5000',
+      renapURL: 'http://6ca8656e563a.ngrok.io',
       antecedentes: {},
     },
     mutations: {
       SetAntecedentes(state, payload){
         state.antecedentes = payload.antecedentes
-      }
+      },
     },
     getters: {
-      policiaURI: (state) => {
-        return state.policiaURI
+      policiaURL: (state) => {
+        return state.policiaURL
+      },
+      bancoURL: (state) => {
+        return state.bancoURL
+      },
+      renapURL: (state) => {
+        return state.renapURL
       },
       antecedentes: (state) => {
         return state.antecedentes
-      }
+      },
     },
 
     // enable strict mode (adds overhead!)
